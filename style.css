@@ -13,9 +13,11 @@ body {
     padding: 10px;
     justify-content: space-between;
     border-bottom: 1px solid black;
-    gap: 10px;
+    gap: 10px;http://127.0.0.1:3000/img1.jpg
 }
-
+ .icon1{
+    display:none;
+}
 .title {
     color: #A435EF;
 }
@@ -49,7 +51,8 @@ body {
     padding: 10px;
     border-bottom: solid black 1px;
     justify-content: space-around;
-    gap: 5px
+    gap: 5px;
+    cursor: pointer;
 }
 
 .categories p {
@@ -57,12 +60,52 @@ body {
     color: white;
     padding: 5px;
     border-radius: 30px;
-
+    border: solid #A435EF 1px;
 }
 
+
+.categories p:hover{
+    transition: 1s;
+    background-color: transparent;
+    color: black;
+    border: solid #A435EF 1px;
+}
+.pic{
+    position: relative;
+}
 .pic img {
     width: 100%;
 
+}
+.ad {
+background-color: white;
+color:black;
+border: solid transparent 1px;
+padding:10px;
+position:absolute;
+top:40px;
+left:40px;
+animation-name: zoom;
+animation-duration: 2s;
+opacity:0;
+animation-fill-mode: forwards;
+}
+@keyframes zoom{
+    0%{
+transform: scale(0);
+opacity: 0;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+} 
+.ad button{
+    margin-top: 10px;
+    background-color: #A435EF;
+    color:white;
+    border:none;
+    padding:5px;
 }
 
 .course_title {
@@ -74,7 +117,9 @@ body {
     margin-left: 10px;
 }
 .course-card {
-    width: 200px;
+    flex-grow: 1;
+    flex-basis: 20%;
+    margin: 5px;
 }
 
 .course-card img {
@@ -181,3 +226,27 @@ body {
     padding:10px;
     margin-top: 20px;
 }
+/* media Queries*/
+@media screen and (max-width:800px){
+    .body{
+        font-size: 10px;
+    }
+    .course-card{
+        flex-basis:40% ;
+    }
+    .categories{
+        display: none;
+    }
+ .icon1{
+        display: block;
+    }
+    .navbar .search, .navbar .icon{
+        display: none;
+    }
+    .ins_1{
+        flex-grow: 1;
+        flex-basis: 40%;
+    }
+}
+
+
